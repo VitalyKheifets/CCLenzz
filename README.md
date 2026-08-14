@@ -5,7 +5,7 @@
 [![Platforms: macOS · Linux](https://img.shields.io/badge/platforms-macOS%20%C2%B7%20Linux-lightgrey)](#requirements)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](#requirements)
 
-**A flight recorder + heads-up display for [Claude Code](https://claude.ai/code).**
+**A flight recorder + heads-up display for [Claude Code](https://claude.com/claude-code).**
 
 CCLenzz renders a live, tabbed terminal view of your Claude Code sessions,
 read straight from `~/.claude/projects/*/*.jsonl`. Every prompt and tool call
@@ -40,7 +40,7 @@ whether what Claude *did* matched what you *asked for* — plus a one-key
 
 - **Python ≥ 3.11** (standard library only).
 - A terminal.
-- For the audit/explain features only: the [`claude`](https://claude.ai/code)
+- For the audit/explain features only: the [`claude`](https://claude.com/claude-code)
   CLI on your `PATH`, already logged in.
 
 ## Install
