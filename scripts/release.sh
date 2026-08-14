@@ -6,7 +6,9 @@
 #
 # This script is the entire stable-release mechanism. It:
 #   1. Verifies preconditions (on main, clean, synced with origin, gh authed,
-#      the arg is SemVer and greater than the current version).
+#      the arg is SemVer, has no existing tag (not already released), and is
+#      not older than the current baseline). Releasing the baseline itself
+#      (NEW == CURRENT) is allowed — that is how the first release is cut.
 #   2. Runs the full local test/coverage gate — abort on any failure.
 #   3. Bumps the version in pyproject.toml + the __init__.py fallback string.
 #   4. Moves CHANGELOG.md's [Unreleased] entries under [X.Y.Z] - <today>.
@@ -87,13 +89,22 @@ with open("pyproject.toml", "rb") as fh:
 PY
 )"
 [ -n "$CURRENT" ] || die "could not read the current version from pyproject.toml"
+# Never re-release an existing version: if a vX.Y.Z tag already exists locally
+# or on origin, this version is already out — refuse. (This is the real guard;
+# the baseline is the *next* version to ship, so NEW == CURRENT is the normal
+# first-release case, not an error.)
+if git rev-parse -q --verify "refs/tags/v${NEW_VERSION}" >/dev/null 2>&1 \
+   || [ -n "$(git ls-remote --tags origin "refs/tags/v${NEW_VERSION}" 2>/dev/null)" ]; then
+  die "v${NEW_VERSION} is already released (tag exists) — bump to a newer version"
+fi
+# ...but never go backwards below the current baseline.
 if ! "$PY" - "$CURRENT" "$NEW_VERSION" <<'PY'
 import sys
-def parse(v): return tuple(int(x) for x in v.split("-", 1)[0].split("."))
-sys.exit(0 if parse(sys.argv[2]) > parse(sys.argv[1]) else 1)
+def core(v): return tuple(int(x) for x in v.split("-", 1)[0].split("."))
+sys.exit(0 if core(sys.argv[2]) >= core(sys.argv[1]) else 1)
 PY
 then
-  die "new version $NEW_VERSION is not greater than current $CURRENT"
+  die "new version $NEW_VERSION is older than current baseline $CURRENT"
 fi
 info "release.sh: $CURRENT -> $NEW_VERSION"
 

@@ -11,8 +11,6 @@ the GitHub release notes. Keep new entries under `## [Unreleased]`.
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-08-15
-
 ### Added
 - Read-only, tabbed curses TUI that tails Claude Code session transcripts
   (`~/.claude/projects/*/*.jsonl`), one row per prompt / tool call, with

@@ -52,8 +52,11 @@ and **aborts if it's empty**.
 scripts/release.sh X.Y.Z      # e.g. scripts/release.sh 1.0.1
 ```
 
-The version must be valid SemVer and strictly greater than the current
-`pyproject.toml` version. The script then, in order:
+The version must be valid SemVer, must not already be tagged (a `vX.Y.Z` tag
+means it is already released — refused), and must not be older than the current
+`pyproject.toml` baseline. Releasing the baseline itself (`X.Y.Z` equal to the
+current version) is allowed — that is how the **first** release is cut, since
+the baseline names the *next* version to ship. The script then, in order:
 
 1. **Runs the full test gate** (`python3 -m pytest`, coverage gate included via
    `addopts`) — aborts on any failure.
