@@ -138,10 +138,12 @@ else:
         sys.exit(4)
 
 pyz = None
+pyz_name = None
 for a in rel.get("assets", []):
     n = a.get("name", "")
     if n.startswith("cclenzz-") and n.endswith(".pyz"):
         pyz = a.get("browser_download_url")
+        pyz_name = n
         break
 if not pyz:
     sys.stderr.write("release %s has no cclenzz-*.pyz asset\n" % rel.get("tag_name"))
@@ -153,6 +155,10 @@ sums = pyz.rsplit("/", 1)[0] + "/SHA256SUMS"
 print(rel["tag_name"])
 print(pyz)
 print(sums)
+# The real asset name from the API — NOT basename(url), which percent-encodes
+# characters like '+' (snapshot versions are X.Y.Z-dev+<sha>). SHA256SUMS lists
+# the decoded name, so the local filename must match it exactly to verify.
+print(pyz_name)
 PY
 }
 
@@ -160,7 +166,9 @@ RELEASE_INFO="$(read_release)" || die "could not resolve a release on the '$CHAN
 TAG="$(printf '%s\n' "$RELEASE_INFO" | sed -n '1p')"
 PYZ_URL="$(printf '%s\n' "$RELEASE_INFO" | sed -n '2p')"
 SUMS_URL="$(printf '%s\n' "$RELEASE_INFO" | sed -n '3p')"
-PYZ_NAME="$(basename "$PYZ_URL")"
+PYZ_NAME="$(printf '%s\n' "$RELEASE_INFO" | sed -n '4p')"
+# Fall back to the URL basename only if the parser gave no name (old payloads).
+[ -n "$PYZ_NAME" ] || PYZ_NAME="$(basename "$PYZ_URL")"
 [ -n "$TAG" ] && [ -n "$PYZ_URL" ] || die "release resolution returned no asset"
 info "cclenzz: found $TAG ($PYZ_NAME)"
 
