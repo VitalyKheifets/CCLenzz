@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+import sys, os, json, re
+argv = sys.argv[1:]
+data = sys.stdin.read()
+# capture argv + stdin for assertions
+cap = os.environ.get("FAKE_CLAUDE_CAPTURE")
+if cap:
+    try:
+        with open(cap, "w") as f:
+            f.write(json.dumps({"argv": argv, "stdin": data}))
+    except OSError:
+        pass
+assert "-p" in argv, "missing -p"
+assert "json" in argv, "missing output format"
+assert "--no-session-persistence" in argv
+assert "Bash,Edit,Write,Read,Grep,Glob,WebFetch,WebSearch,Agent,Task" in argv
+if "--json-schema" in argv:
+    # audit: build verdicts for each [prompt N] in the transcript
+    idxs = sorted(set(int(m) for m in re.findall(r"\[prompt (\d+)\]", data)))
+    if not idxs:
+        idxs = [1]
+    verdicts = [{"prompt_idx": i, "ask": "the ask", "delivered": "delivered it",
+                 "defects": [], "alignment": 100, "evidence_gaps": [],
+                 "confidence": 100, "reason": "looks aligned",
+                 "flagged_items": []} for i in idxs]
+    env = {"is_error": False, "result": json.dumps({"verdicts": verdicts}),
+           "total_cost_usd": 0.0123}
+else:
+    env = {"is_error": False, "result": "Runs the test suite.\nBecause the user asked.",
+           "total_cost_usd": 0.0004}
+print(json.dumps(env))

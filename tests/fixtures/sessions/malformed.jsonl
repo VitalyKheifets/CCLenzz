@@ -1,0 +1,8 @@
+{"type":"user","cwd":"/home/u/proj","timestamp":"2026-01-01T10:00:00.000Z","message":{"role":"user","content":"valid prompt"}}
+{broken json here
+{"type":"weird_unknown_type","foo":"bar"}
+{"type":"assistant","timestamp":"2026-01-01T10:00:01.000Z","message":{"role":"assistant","stop_reason":"tool_use","content":[{"type":"tool_use","id":"m1","name":"ZzUnknownTool","input":{}}]}}
+{"type":"user","timestamp":"2026-01-01T10:00:02.000Z","message":{"role":"user","content":[{"type":"tool_result","content":"no id here","is_error":false}]}}
+{"type":"user","isMeta":true,"message":{"role":"user","content":"meta message ignored"}}
+not even json
+{"type":"user","timestamp":"2026-01-01T10:00:03.000Z","message":{"role":"user","content":"partial last line no newline"}}

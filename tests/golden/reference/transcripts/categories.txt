@@ -1,0 +1,18 @@
+[prompt 1] (item 0) "use every tool"
+tool (item 1) Bash · ls → ok
+tool (item 2) Read · f.py → ok
+tool (item 3) Edit · f.py → applied edit (+1 −1 lines)
+tool (item 4) Grep · foo → ok
+tool (item 5) Glob · *.py → ok
+tool (item 6) ToolSearch · stuff → ok
+tool (item 7) Agent · explorer → sub-agent report: ok
+tool (item 8) TaskFoo · a task → sub-agent report: ok
+tool (item 9) WebSearch · python → ok
+tool (item 10) WebFetch · http://x.com → ok
+tool (item 11) Skill · docx → ok
+tool (item 12) Artifact · out.html → ok
+tool (item 13) MCP · srv.dothing → ok
+tool (item 14) UnknownTool → ok
+say  "done"
+
+[session status] COMPLETE — the agent finished its turn and handed control back to the user.

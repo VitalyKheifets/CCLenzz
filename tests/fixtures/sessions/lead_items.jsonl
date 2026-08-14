@@ -1,0 +1,4 @@
+{"type":"assistant","cwd":"/home/u/proj","timestamp":"2026-01-01T10:00:00.000Z","message":{"role":"assistant","stop_reason":"tool_use","content":[{"type":"tool_use","id":"L1","name":"Read","input":{"file_path":"/home/u/proj/pre.py"}}]}}
+{"type":"user","timestamp":"2026-01-01T10:00:01.000Z","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"L1","content":"content","is_error":false}]}}
+{"type":"user","cwd":"/home/u/proj","timestamp":"2026-01-01T10:00:02.000Z","message":{"role":"user","content":"now the first prompt"}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:03.000Z","message":{"role":"assistant","stop_reason":"end_turn","content":[{"type":"text","text":"ok"}]}}

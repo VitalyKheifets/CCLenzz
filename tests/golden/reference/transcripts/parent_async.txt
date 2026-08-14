@@ -1,0 +1,8 @@
+[prompt 1] (item 0) "launch a subagent to search"
+tool (item 1) Agent · searcher → launched sub-agent (its internal steps are inlined below)
+  [prompt 2] (item 2) "child task brief"
+  ↳ (item 3) Grep · needle → found it
+  say  "child done"
+say  "subagent finished searching"
+
+[session status] COMPLETE — the agent finished its turn and handed control back to the user.

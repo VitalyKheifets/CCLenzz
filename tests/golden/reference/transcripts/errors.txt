@@ -1,0 +1,5 @@
+[prompt 1] (item 0) "run something that fails"
+tool (item 1) Bash · false → ERROR: command failed
+say  "it failed"
+
+[session status] COMPLETE — the agent finished its turn and handed control back to the user.

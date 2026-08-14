@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+import sys
+sys.stdin.read()
+print("this is not json at all")

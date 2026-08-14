@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest an enhancement or new capability.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        CCLenzz is deliberately small and **stdlib-only** — no runtime
+        dependencies, ever, and it never writes under `~/.claude`. Proposals
+        that fit those constraints are much likelier to land. For anything
+        non-trivial, opening this issue to agree on the approach *before*
+        writing code is the expected first step (see
+        [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md)).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do that CCLenzz makes hard today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should CCLenzz do? Sketch the UX or behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you weighed, and why this one.
+    validations:
+      required: false
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Fits the project constraints
+      description: Confirm the proposal respects the hard constraints.
+      options:
+        - label: No new runtime dependencies (standard library only).
+          required: true
+        - label: No writes under `~/.claude`; the view stays read-only.
+          required: true

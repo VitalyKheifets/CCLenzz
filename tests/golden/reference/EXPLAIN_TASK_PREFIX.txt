@@ -1,0 +1,6 @@
+Explain the single Claude Code tool call described below to a developer reading a
+live session log. Follow your system instructions exactly: plain language, no
+preamble, start with the verb.
+
+CALL
+====

@@ -1,0 +1,5 @@
+[prompt 1] (item 0) "launch a sync subagent"
+tool (item 1) Agent · reporter → sub-agent report: agentId: def456 ⏎ The report body goes here.
+say  "got the report"
+
+[session status] COMPLETE — the agent finished its turn and handed control back to the user.

@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+import sys
+sys.stdin.read()
+sys.stderr.write("boom\n")
+sys.exit(1)

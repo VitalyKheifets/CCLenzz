@@ -1,0 +1,28 @@
+# cclenzz — config
+# This file is the ONLY way to configure cclenzz (no flags, no env vars).
+# Re-run the wizard any time with:  cclenzz setup
+# Uncomment a line to override its built-in default.
+
+# --- appearance (set by the wizard) ---
+theme = "{theme}"          # auto | dark | light
+icons = "{icons}"          # auto | nerd | unicode | ascii
+color = "{color}"          # auto | always | never
+
+# --- intent audit (set by the wizard) ---
+auto_audit = {auto_audit}  # true: audit every new prompt automatically (costs money)
+
+# --- models ---
+#audit_model = "opus"      # model for the intent audit (a key / Auto mode)
+#explain_model = "haiku"   # model for the per-item explain feature (? key)
+
+# --- behavior ---
+#interval = 1.0            # live poll interval, seconds
+#ambiwidth = 1             # 2 if your terminal renders ambiguous-width glyphs wide
+
+# --- paths ---
+#projects_glob = "~/.claude/projects/*/*.jsonl"   # where sessions are read from
+#claude_bin = "claude"     # the claude CLI used for audit/explain calls
+
+# --- persistence (~/.cclenzz) ---
+#persist = true            # cache audit/explain results to JSON sidecars
+#state_retention_days = 30 # prune cached results older than this

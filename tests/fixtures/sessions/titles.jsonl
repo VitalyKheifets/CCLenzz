@@ -1,0 +1,4 @@
+{"type":"user","cwd":"/home/u/myproject","timestamp":"2026-01-02T09:00:00.000Z","message":{"role":"user","content":"first prompt here"}}
+{"type":"last-prompt","lastPrompt":"the last prompt"}
+{"type":"ai-title","aiTitle":"AI Generated Title"}
+{"type":"custom-title","customTitle":"My Custom Title"}

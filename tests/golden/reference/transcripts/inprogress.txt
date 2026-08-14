@@ -1,0 +1,4 @@
+[prompt 1] (item 0) "do a long task"
+tool (item 1) Bash · sleep 100 → (no result yet — this call is still in flight)
+
+[session status] IN PROGRESS — the agent is still working on the LAST prompt; later steps for it are not in this transcript yet.

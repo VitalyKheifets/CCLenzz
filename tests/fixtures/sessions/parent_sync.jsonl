@@ -1,0 +1,4 @@
+{"type":"user","cwd":"/home/u/proj","timestamp":"2026-01-01T10:00:00.000Z","message":{"role":"user","content":"launch a sync subagent"}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:00.500Z","message":{"role":"assistant","stop_reason":"tool_use","content":[{"type":"tool_use","id":"ps1","name":"Agent","input":{"subagent_type":"reporter","prompt":"summarize"}}]}}
+{"type":"user","timestamp":"2026-01-01T10:00:05.000Z","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"ps1","content":"agentId: def456\nThe report body goes here.","is_error":false}]}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:06.000Z","message":{"role":"assistant","stop_reason":"end_turn","content":[{"type":"text","text":"got the report"}]}}

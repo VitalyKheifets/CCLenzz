@@ -1,0 +1,4 @@
+{"type":"user","cwd":"/home/u/proj","timestamp":"2026-01-01T10:00:00.000Z","message":{"role":"user","content":"run something that fails"}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:01.000Z","message":{"role":"assistant","stop_reason":"tool_use","content":[{"type":"tool_use","id":"x1","name":"Bash","input":{"command":"false"}}]}}
+{"type":"user","timestamp":"2026-01-01T10:00:02.000Z","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"x1","content":"command failed","is_error":true}]}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:03.000Z","message":{"role":"assistant","stop_reason":"end_turn","content":[{"type":"text","text":"it failed"}]}}

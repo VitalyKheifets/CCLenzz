@@ -1,0 +1,53 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# IDEs / editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+
+# Build artifacts (.pyz zipapp + staging dir — see scripts/build.sh)
+build/
+
+# Node / web frontend
+node_modules/
+dist/
+dist-ssr/
+.cache/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Rust / Tauri
+target/
+**/*.rs.bk
+Cargo.lock
+src-tauri/target/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs / temp
+*.log
+tmp/
+.scratch/
+.venv
+*.egg-info/
+__pycache__/
+.pytest_cache/
+
+# Coverage artifacts (pytest-cov / coverage.py)
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml

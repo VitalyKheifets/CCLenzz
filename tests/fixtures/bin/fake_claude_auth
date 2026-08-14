@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+import sys, json
+sys.stdin.read()
+print(json.dumps({"is_error": True, "result": "OAuth token has expired. Please run /login"}))

@@ -1,0 +1,4 @@
+{"type":"user","cwd":"/home/u/proj","timestamp":"2026-01-01T10:00:00.000Z","message":{"role":"user","content":"launch a subagent to search"}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:00.500Z","message":{"role":"assistant","stop_reason":"tool_use","content":[{"type":"tool_use","id":"pa1","name":"Agent","input":{"subagent_type":"searcher","prompt":"go find the needle"}}]}}
+{"type":"user","timestamp":"2026-01-01T10:00:05.000Z","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"pa1","content":"agentId: abc123\noutput_file: {OUTPUT_FILE}\nsub-agent finished","is_error":false}]}}
+{"type":"assistant","timestamp":"2026-01-01T10:00:06.000Z","message":{"role":"assistant","stop_reason":"end_turn","content":[{"type":"text","text":"subagent finished searching"}]}}

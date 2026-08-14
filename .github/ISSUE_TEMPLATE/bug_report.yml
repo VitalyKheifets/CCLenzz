@@ -1,0 +1,69 @@
+name: Bug report
+description: Something in CCLenzz misbehaves or crashes.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. CCLenzz is read-only and degrades rather than
+        crashing on malformed transcripts — so the `cclenzz doctor` output and
+        exact repro steps below are usually what a diagnosis needs.
+
+        **Do not report security issues here** — see
+        [SECURITY.md](../blob/main/SECURITY.md) for private reporting.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong, and what you expected instead.
+      placeholder: I pressed `a` to audit and the badge never appeared…
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The minimal sequence that triggers it.
+      placeholder: |
+        1. Open CCLenzz on a session with …
+        2. Press …
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "`cclenzz doctor` output"
+      description: >
+        Run `cclenzz doctor` (or `./cclenzz doctor`) and paste the full output.
+        It reports the detected terminal capabilities and environment checks.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: CCLenzz version
+      description: Output of `cclenzz --version`.
+      placeholder: cclenzz 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS + version, terminal emulator, and `python3 --version`.
+      placeholder: |
+        macOS 15.5, iTerm2, Python 3.12.4
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: >
+        Logs, screenshots, or notes. Please redact anything private — CCLenzz
+        reads your real session transcripts, so scrub prompts/paths as needed.
+    validations:
+      required: false
