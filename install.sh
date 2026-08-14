@@ -167,8 +167,6 @@ TAG="$(printf '%s\n' "$RELEASE_INFO" | sed -n '1p')"
 PYZ_URL="$(printf '%s\n' "$RELEASE_INFO" | sed -n '2p')"
 SUMS_URL="$(printf '%s\n' "$RELEASE_INFO" | sed -n '3p')"
 PYZ_NAME="$(printf '%s\n' "$RELEASE_INFO" | sed -n '4p')"
-# Fall back to the URL basename only if the parser gave no name (old payloads).
-[ -n "$PYZ_NAME" ] || PYZ_NAME="$(basename "$PYZ_URL")"
 [ -n "$TAG" ] && [ -n "$PYZ_URL" ] || die "release resolution returned no asset"
 info "cclenzz: found $TAG ($PYZ_NAME)"
 
