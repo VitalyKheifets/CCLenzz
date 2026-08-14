@@ -11,6 +11,8 @@ the GitHub release notes. Keep new entries under `## [Unreleased]`.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-08-14
+
 ### Added
 - Read-only, tabbed curses TUI that tails Claude Code session transcripts
   (`~/.claude/projects/*/*.jsonl`), one row per prompt / tool call, with
@@ -22,3 +24,4 @@ the GitHub release notes. Keep new entries under `## [Unreleased]`.
   the `install.sh` one-liner (Python ≥ 3.11 preflight, stable/snapshot
   channels, checksum-verified download), and the `cclenzz update` self-update
   subcommand.
+
