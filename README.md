@@ -1,11 +1,13 @@
-# CCLenzz
+<p align="center">
+  <img src="assets/cclenzz-logo.png" alt="CCLenzz" width="360">
+</p>
 
-[![Latest release](https://img.shields.io/github/v/release/VitalyKheifets/CCLenzz?sort=semver)](https://github.com/VitalyKheifets/CCLenzz/releases/latest)
-[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-[![Platforms: macOS · Linux](https://img.shields.io/badge/platforms-macOS%20%C2%B7%20Linux-lightgrey)](#requirements)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](#requirements)
-
-**A flight recorder + heads-up display for [Claude Code](https://claude.com/claude-code).**
+<p align="center">
+  <a href="https://github.com/VitalyKheifets/CCLenzz/releases/latest"><img src="https://img.shields.io/github/v/release/VitalyKheifets/CCLenzz?sort=semver" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="License: Apache-2.0"></a>
+  <a href="#requirements"><img src="https://img.shields.io/badge/platforms-macOS%20%C2%B7%20Linux-lightgrey" alt="Platforms: macOS · Linux"></a>
+  <a href="#requirements"><img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="Python 3.11+"></a>
+</p>
 
 CCLenzz renders a live, tabbed terminal view of your Claude Code sessions,
 read straight from `~/.claude/projects/*/*.jsonl`. Every prompt and tool call
