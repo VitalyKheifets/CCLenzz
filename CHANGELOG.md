@@ -11,6 +11,8 @@ the GitHub release notes. Keep new entries under `## [Unreleased]`.
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-08-15
+
 ### Added
 - Render AI-generated content as a distinct callout card so it stands out from
   regular transcript rows.

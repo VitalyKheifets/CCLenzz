@@ -1,6 +1,6 @@
 [project]
 name = "cclenzz"
-version = "1.0.0"
+version = "1.0.1"
 description = "Live tabbed terminal view of Claude Code sessions with an LLM intent audit"
 requires-python = ">=3.11"
 dependencies = []            # HARD RULE: stays empty

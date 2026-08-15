@@ -21,7 +21,7 @@ from importlib.metadata import version as _pkg_version
 try:
     __version__ = _pkg_version("cclenzz")
 except PackageNotFoundError:               # source checkout / zipapp
-    __version__ = "1.0.0"
+    __version__ = "1.0.1"
 
 # Backwards-compatible alias: every surface that shows a version reads this
 # constant (``--version``, the doctor banner, persisted sidecars).
