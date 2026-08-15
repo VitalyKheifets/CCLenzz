@@ -24,6 +24,8 @@ RGB_ = {
     "error":      ("#e06c75", "#c22b36", 168, 160, "red", ""),
     "warn":       ("#e5c07b", "#9a6a00", 179, 136, "yellow", ""),
     "ok":         ("#98c379", "#3d8a2e", 114, 28,  "green", ""),
+    "ai":         ("#bb9af7", "#7a3ff2", 141, 98,  "magenta", "BOLD"),
+    "ai.dim":     ("#7d6ba8", "#9a86c8", 103, 97,  "magenta", "DIM"),
     "sel.bg":     ("#2b3245", "#dde6f7", 237, 189, None, ""),
     "diff.add.bg": ("#20303b", "#e2f0e0", 236, 194, None, ""),
     "diff.del.bg": ("#37222c", "#f7e2e4", 236, 224, None, ""),

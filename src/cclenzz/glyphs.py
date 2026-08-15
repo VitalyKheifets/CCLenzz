@@ -34,12 +34,15 @@ GLYPHS = {
     "expanded":         ("▾",         "▾", "v"),   # ▾
     "collapsed":        ("▸",         "▸", ">"),   # ▸
     "selbar":           ("▍",         "▍", "|"),   # ▍
-    "badge":            ("⟐",         "⟐", "*"),   # ⟐ (audit badge)
+    "badge":            ("✦",         "✦", "*"),   # ✦ (AI sigil — audit + explain)
     # tree guides
     "g_v":              ("│",         "│", "|"),   # │
     "g_t":              ("├",         "├", "|"),   # ├
     "g_l":              ("╰",         "╰", "\\"),  # ╰
     "g_h":              ("─",         "─", "-"),   # ─
+    # AI-callout frame — the card that wraps machine-generated prose
+    "ai_tl":            ("╭",         "╭", "+"),   # ╭ (top-left corner)
+    "ai_bar":           ("┊",         "┊", ":"),   # ┊ (dashed left rail)
     "arr_l":            ("‹",         "‹", "<"),   # ‹
     "arr_r":            ("›",         "›", ">"),   # ›
     "sb_track":         ("░",         "░", "."),   # ░
@@ -52,7 +55,7 @@ GLYPHS = {
 
 # Glyphs marked ᴬ in §3.1 — East-Asian Ambiguous; downgrade under ambiwidth=2.
 AMBI_KEYS = {"mcp", "agent", "web", "artifact", "error", "live", "paused",
-             "err_dot", "expanded", "collapsed"}
+             "err_dot", "expanded", "collapsed", "badge"}
 
 SPINNER_UNICODE = "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
 SPINNER_ASCII = "|/-\\"

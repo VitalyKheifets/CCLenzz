@@ -369,6 +369,18 @@ lines carry a `cite` pointer that `→` follows to the offending item.
 Cursor identity survives reloads by remembering the owning `Item` object and
 re-finding it.
 
+**AI-callout card:** the two LLM-generated regions — the `?` explanation and
+the intent-audit derivation — never render as plain detail blocks. `RowBuilder.
+emit_ai_block` frames them as a card so machine-generated prose can't be
+mistaken for logged transcript data: a violet `✦` sigil + `ai`/`ai.dim` color
+tokens, a `╭─ ✦ <title> ─` header, a dashed `┊` left rail down every body line,
+and a `╰─ ✦ <verb> by claude · <model>` provenance footer. The audit badge
+row's `✦` uses the same `ai` violet; the score keeps its aligned/partial/drift
+color. The card degrades with the glyph/color tiers like everything else
+(`✦→*`, `┊→:`, `╭→+`, violet→magenta→mono). Raw tool `input`/`result`/`diff`
+blocks stay on the flat `emit_blocks` treatment — the visual split *is* the
+point.
+
 ### 9.4 View-state identity
 
 All fold/expand/flag/explain state is keyed by `id(item)`. This is correct
