@@ -101,6 +101,7 @@ def _verdict_view(v):
         "defects": v.get("defects") or [],
         "evidence_gaps": v.get("evidence_gaps") or [],
         "scope": v.get("scope"),
+        "model": v.get("model"),
     }
 
 
@@ -130,7 +131,7 @@ def persist_audit(paths, settings, tab, res, index_map, prompt_map):
             "alignment": v.get("alignment"), "confidence": v.get("confidence"),
             "reason": v.get("reason"), "defects": v.get("defects") or [],
             "evidence_gaps": v.get("evidence_gaps") or [],
-            "scope": v.get("scope"),
+            "scope": v.get("scope"), "model": v.get("model"),
             "flagged_item_keys": flagged_keys,
         })
     doc = _fresh_doc_for(paths, settings, tab.session)

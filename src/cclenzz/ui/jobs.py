@@ -63,7 +63,10 @@ class AuditJob:
         by_prompt = {}
         flagged = set()
         deltas = {}
+        model = res.get("model")
         for v in res.get("verdicts") or []:
+            if model and isinstance(v, dict):
+                v.setdefault("model", model)
             pit = prompt_map.get(v.get("prompt_idx"))
             if pit is not None:
                 by_prompt[id(pit)] = v
